@@ -1,3 +1,10 @@
+const userLocation = document.getElementById('location')
+const submit = document.getElementById('submit');
+
+submit.addEventListener('click', () => {
+    getWeather(userLocation.value).catch(handleError);
+})
+
 async function getWeather(location) {
     const apiFetch = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=fb3852c09f6447cfbb4174232242606&q=${location}&days=4`, 
     {mode: 'cors'});
@@ -52,6 +59,10 @@ function getWeatherInfo(response) {
 function handleError(error) {
     console.log(`ERROR: ${error}`);
 }
+
+
+
+//FOR FUTURE USE
 
 // function updateUI(data) {
 //     const currentCondition = document.getElementById('condition');
