@@ -7,10 +7,7 @@ async function getWeather(location) {
     console.log(relevantWeatherData); 
 }
 
-getWeather('Charlotte').catch(error => {
-    console.log(`ERROR: ${error}`);
-});
-
+getWeather('Charlotte').catch(handleError);
 
 function getWeatherInfo(response) {
     const weather = {
@@ -50,6 +47,10 @@ function getWeatherInfo(response) {
         dayThreeRainChance: response.forecast.forecastday[3].day.daily_chance_of_rain
     }
     return weather;
+}
+
+function handleError(error) {
+    console.log(`ERROR: ${error}`);
 }
 
 // function updateUI(data) {
