@@ -6,12 +6,22 @@ async function getCurrentWeather(location) {
     .then(function(response) {
         return response.json();
     })
-    .then(function(response) {
-        console.log(response);
-    })
+    .then(getWeatherInfo)
     .catch(function(error) {
         console.log(`ERROR: ${error}`)
     });
 }
 
 getCurrentWeather('charlotte');
+function getWeatherInfo(response) {
+    console.log(response.current);
+    const weatherInfo = {
+        condition: response.current.condition.text,
+        tempF: response.current.temp_f,
+        tempC: response.current.temp_c,
+        feelsLikeF: response.current.feelslike_f,
+        feelsLikeC: response.current.feelslike_c,
+        humidity: response.current.humidity,
+    };
+    console.log(weatherInfo);
+}
