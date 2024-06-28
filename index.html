@@ -7,6 +7,66 @@
     <title>Weather</title>
 </head>
 <body>
+    <form>
+        <label for="location">Search your location: </label>
+        <input type="text" id="user-location" name="user-location">
+        <button type="button" id="submit">Submit</button>
+    </form>
+    <div class="main-container">
+        <div class="overview">
+            <h2 id="location">Location</h2>
+            <h1 id="current-temp">90&deg;</h1>
+            <h3 id="condition">Sunny</h3>
+            <div class="flex-container">
+                <p id="current-high">100&deg;</p>
+                <p id="current-low">70&deg;</p>
+            </div>
+            <button id="toggle">F -> C</button>
+        </div>
+        <div class="forecast-container">
+            <p>3-DAY FORECAST</p>
+            <div class="forecast">
+                <h4>Day</h4>
+                <div class="icon">
+                    <img>
+                    <p>rain%</p>
+                </div>
+                <div class="low-to-high">Low To High</div>
+            </div>
+            <div class="forecast">
+                <h4>Day</h4>
+                <div class="icon">
+                    <img>
+                    <p>rain%</p>
+                </div>
+                <div class="low-to-high">Low To High</div>
+            </div>
+            <div class="forecast">
+                <h4>Day</h4>
+                <div class="icon">
+                    <img>
+                    <p>rain%</p>
+                </div>
+                <div class="low-to-high">Low To High</div>
+            </div>
+            <div class="forecast">
+                <h4>Day</h4>
+                <div class="icon">
+                    <img>
+                    <p>rain%</p>
+                </div>
+                <div class="low-to-high">Low To High</div>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div class="display-feel">Humidity</div>
+            <div class="display-feel">Feels Like</div>
+        </div>
+        <div class="flex-container apart">
+            <div>Sunset</div>
+            <p>8:30PM</p>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
