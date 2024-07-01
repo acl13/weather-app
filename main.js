@@ -1,4 +1,4 @@
-const userLocation = document.getElementById('location')
+const userLocation = document.getElementById('user-location')
 const submit = document.getElementById('submit');
 
 submit.addEventListener('click', () => {
@@ -11,14 +11,15 @@ async function getWeather(location) {
     const weatherData = await apiFetch.json();
     console.log(weatherData);
     const relevantWeatherData = await getWeatherInfo(weatherData); 
-    console.log(relevantWeatherData); 
-}
+    console.log(relevantWeatherData);
+}   
 
 getWeather('Charlotte').catch(handleError);
 
 function getWeatherInfo(response) {
     const weather = {
         currentCondition: response.current.condition.text,
+        currentImage: response.current.condition.icon,
         currentTempF: response.current.temp_f,
         currentTempC: response.current.temp_c,
         currentFeelsLikeF: response.current.feelslike_f,
@@ -30,7 +31,9 @@ function getWeatherInfo(response) {
         todayLowTempF: response.forecast.forecastday[0].day.mintemp_f,
         todayLowTempC: response.forecast.forecastday[0].day.mintemp_c,
         todayHumidity: response.forecast.forecastday[0].day.avghumidity,
-        todayRainChance: response.forecast.forecastday[0].day.daily_chance_of_rain, 
+        todayRainChance: response.forecast.forecastday[0].day.daily_chance_of_rain,
+        todaySunrise: response.forecast.forecastday[0].astro.sunrise, 
+        todaySunset: response.forecast.forecastday[0].astro.sunset,
         tomorrowCondition: response.forecast.forecastday[1].day.condition.text,
         tomorrowHighTempF: response.forecast.forecastday[1].day.maxtemp_f,
         tomorrowHighTempC: response.forecast.forecastday[1].day.maxtemp_c,
@@ -38,6 +41,7 @@ function getWeatherInfo(response) {
         tomorrowLowTempC: response.forecast.forecastday[1].day.mintemp_c,
         tomorrowHumidity: response.forecast.forecastday[1].day.avghumidity,
         tomorrowRainChance: response.forecast.forecastday[1].day.daily_chance_of_rain,
+        tomorrowSunrise: response.forecast.forecastday[1].astro.sunrise,
         dayTwoCondition: response.forecast.forecastday[2].day.condition.text,
         dayTwoHighTempF: response.forecast.forecastday[2].day.maxtemp_f,
         dayTwoHighTempC: response.forecast.forecastday[2].day.maxtemp_c,
@@ -62,9 +66,13 @@ function handleError(error) {
 
 
 
-//FOR FUTURE USE
+// FOR FUTURE USE
+
+
 
 // function updateUI(data) {
 //     const currentCondition = document.getElementById('condition');
-//     currentCondition.textContent = data.dayTwoRainChance;
+//     currentCondition.textContent = data.currentCondition;
+//     const img = document.getElementById('weather-img');
+//     img.src = data.currentImage
 // }
