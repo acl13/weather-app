@@ -124,8 +124,8 @@ dayThreeHigh.textContent = `High: ${Math.round(data.dayThreeHighTempF)}`;
 humidity.textContent = `${data.currentHumidity}%`;
 feelsLike.textContent = `${Math.round(data.currentFeelsLikeF)}\u00B0`;
 displaySunriseSunset(data);
+displayBackground(data.currentCondition);
 }
-
 
 function getIcon(condition) {
     let icon; 
@@ -183,13 +183,6 @@ const dayThreeRainChance = document.getElementById('day-three-rain-chance');
     }
 }
 
-function getTwoDigitMinutes(currentMinutes) {
-    if (currentMinutes < 10) {
-        currentMinutes = `0${currentMinutes}`;
-        return currentMinutes;
-    }
-}
-
 function displaySunriseSunset(data) {
 const sunriseHour = +data.todaySunrise.slice(0, 2);
 const sunsetHourMilitary = +data.todaySunset.slice(0, 2) + 12;
@@ -208,4 +201,25 @@ if (currentHour <= sunriseHour) {
     riseOrSet.textContent = 'Sunrise';
     riseOrSetTime = data.tomorrowSunrise;
 }
+}
+
+function displayBackground(condition) {
+    const body = document.body;
+    body.classList 
+     if (condition === 'Sunny') {
+        body.className = 'sunny';
+    } else if (condition === 'Cloudy') {
+        body.className = 'cloudy';
+    } else if (/rain/i.test(condition)) {
+        body.className = 'rain';
+    } else if (/storm/i.test(condition)) {
+        body.className = 'storm';
+    } else if (/snow/i.test(condition)) {
+        body.className = 'snow';
+    }  else if (/wind/i.test(condition)) {
+        body.className = 'wind';
+    } else {
+        body.className = 'partly-cloudy';
+    }
+
 }
