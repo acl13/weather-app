@@ -9,22 +9,48 @@ form {
     margin: 2em 0; 
 }
 
-div {
-    border: 1px solid black;
+svg, #current-high {
+    padding-right: 1ch;
 }
 
-.main-container {
+.large-text {
+    font-size: 2em;
+}
+
+.container {
+    border: 1px solid black;
+    border-radius: 10px;
+  padding: 1em;
+}
+
+.flex {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.center {
+    justify-content: center;
+}
+
+.apart {
+    justify-content: space-between;
+}
+
+.main {
     max-width: 80%;
     margin: 0px auto;
     display: grid;
     grid-template-rows: 3fr 3fr 2fr 1fr;
+    padding: 1em;
 }
 
 .overview {
     text-align: center;
+    padding-top: 2em;
 }
 
-.forecast-container {
+.forecast-display {
     display: grid;
     grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
 }
@@ -32,20 +58,11 @@ div {
 .forecast {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
-}
-
-.flex-container {
-    display: flex;
-    flex-grow: 1;
     align-items: center;
-    justify-content: center;
-}
-
-.flex-container.apart {
-    justify-content: space-between;
+    border-top: 1px solid gray;
 }
 
 .display-feel {
-    width: 50%; 
-    height: 100%;
+    width: 45%; 
+    height: 70%;
 }
