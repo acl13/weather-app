@@ -4,9 +4,17 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    background-color: #97cbe8;
+}
+
 form {
     text-align: center;
     margin: 2em 0; 
+}
+
+.main {
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 svg, #current-high {
@@ -18,7 +26,7 @@ svg, #current-high {
 }
 
 .container {
-    border: 1px solid black;
+    border: 1px solid lightgray;
     border-radius: 10px;
   padding: 1em;
 }
@@ -59,10 +67,38 @@ svg, #current-high {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
     align-items: center;
-    border-top: 1px solid gray;
+    border-top: 1px solid lightgray;
 }
 
 .display-feel {
     width: 45%; 
     height: 70%;
+}
+
+.sunny {
+    background-image: url('sunny.png');
+}
+
+.cloudy {
+    background-image: url('cloudy\ \(1\).png');
+}
+
+.partly-cloudy {
+    background-image: url('partly-cloudy.png');
+}
+
+.rain {
+    background-image: url('rain.png');
+}
+
+.storm {
+    background-image: url('storm.png');
+}
+
+.snow {
+    background-image: url('snow');
+}
+
+.wind {
+    background-image: url('wind');
 }
