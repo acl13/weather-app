@@ -68,7 +68,7 @@ function handleError(error) {
 
 // UPDATE UI
 
-function updateUI(data) {
+function updateUI(data) {   
 // Current weather 
 const currentLocation = document.getElementById('current-location');
 const currentTemp = document.getElementById('current-temp');
@@ -199,27 +199,29 @@ if (currentHour <= sunriseHour) {
     riseOrSetTime.textContent = data.todaySunset;
 } else if (currentHour > sunsetHourMilitary) {
     riseOrSet.textContent = 'Sunrise';
-    riseOrSetTime = data.tomorrowSunrise;
+    riseOrSetTime.textContent = data.tomorrowSunrise;
 }
+
 }
 
 function displayBackground(condition) {
-    const body = document.body;
-    body.classList 
-     if (condition === 'Sunny') {
-        body.className = 'sunny';
-    } else if (condition === 'Cloudy') {
-        body.className = 'cloudy';
-    } else if (/rain/i.test(condition)) {
-        body.className = 'rain';
-    } else if (/storm/i.test(condition)) {
-        body.className = 'storm';
-    } else if (/snow/i.test(condition)) {
-        body.className = 'snow';
-    }  else if (/wind/i.test(condition)) {
-        body.className = 'wind';
-    } else {
-        body.className = 'partly-cloudy';
-    }
-
+const body = document.body;
+const sunriseCheck = document.getElementById('rise-or-set');
+if (sunriseCheck.textContent === 'Sunrise') {
+    body.className = 'night';
+}else if (condition === 'Sunny') {
+    body.className = 'sunny';
+} else if (condition === 'Cloudy') {
+     body.className = 'cloudy';
+} else if (/rain/i.test(condition)) {
+    body.className = 'rain';
+} else if (/storm/i.test(condition)) {
+     body.className = 'storm';
+} else if (/snow/i.test(condition)) {
+    body.className = 'snow';
+}  else if (/wind/i.test(condition)) {
+    body.className = 'wind';
+} else {
+    body.className = 'partly-cloudy';
+}
 }

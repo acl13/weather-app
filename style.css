@@ -51,6 +51,7 @@ svg, #current-high {
     display: grid;
     grid-template-rows: 3fr 3fr 2fr 1fr;
     padding: 1em;
+    color: black;
 }
 
 .overview {
@@ -96,9 +97,14 @@ svg, #current-high {
 }
 
 .snow {
-    background-image: url('snow');
+    background-image: url('snow.png');
 }
 
 .wind {
-    background-image: url('wind');
+    background-image: url('wind.png');
+}
+
+.night {
+    background-image: url('night.png');
+    color: white;
 }
