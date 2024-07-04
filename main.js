@@ -87,9 +87,24 @@ const date = new Date();
 const tomorrow = document.getElementById('tomorrow');
 const dayTwo = document.getElementById('day-two');
 const dayThree = document.getElementById('day-three');
-tomorrow.textContent = days[date.getDay() + 1];
-dayTwo.textContent = days[date.getDay() + 2];
-dayThree.textContent = days[date.getDay() + 3];
+console.log(date.getDay());
+if (date.getDay() === 6) {
+    tomorrow.textContent = days[date.getDay() - 6];
+    dayTwo.textContent = days[date.getDay() - 5];
+    dayThree.textContent = days[date.getDay() -4];
+} else if (date.getDay() === 5) {
+    tomorrow.textContent = days[date.getDay() + 1];
+    dayTwo.textContent = days[date.getDay() -5];
+    dayThree.textContent = days[date.getDay() -4];
+} else if (date.getDay() === 4) {
+    tomorrow.textContent = days[date.getDay() + 1];
+    dayTwo.textContent = days[date.getDay() + 2];
+    dayThree.textContent = days[date.getDay() - 4];
+} else {
+    tomorrow.textContent = days[date.getDay() + 1];
+    dayTwo.textContent = days[date.getDay() + 2];
+    dayThree.textContent = days[date.getDay() + 3];
+}
 
 // Condition icon & chance of rain
 const todayIcon = document.getElementById('today-icon');
