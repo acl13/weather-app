@@ -13,12 +13,23 @@ form {
     margin: 2em 0; 
 }
 
-.main {
-    background-color: rgba(255, 255, 255, 0.7);
+form input, button {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 0.2em;
+}
+
+button:hover {
+    background-color: #2196F3;
+    color: white;
 }
 
 svg, #current-high {
     padding-right: 1ch;
+}
+
+.main {
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .large-text {
