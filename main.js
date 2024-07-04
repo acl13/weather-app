@@ -113,18 +113,51 @@ const dayThreeLow = document.getElementById('day-three-low');
 const dayThreeHigh = document.getElementById('day-three-high');
 const humidity = document.getElementById('humidity');
 const feelsLike = document.getElementById('feels-like');
-todayLow.textContent = `Low: ${Math.round(data.todayLowTempF)}`;
-todayHigh.textContent = `High: ${Math.round(data.todayHighTempF)}`;
-tomorrowLow.textContent = `Low: ${Math.round(data.tomorrowLowTempF)}`;
-tomorrowHigh.textContent = `High: ${Math.round(data.tomorrowHighTempF)}`;
-dayTwoLow.textContent = `Low: ${Math.round(data.dayTwoLowTempF)}`;
-dayTwoHigh.textContent = `High: ${Math.round(data.dayTwoHighTempF)}`;
-dayThreeLow.textContent = `Low: ${Math.round(data.dayThreeLowTempF)}`;
-dayThreeHigh.textContent = `High: ${Math.round(data.dayThreeHighTempF)}`;
+todayLow.textContent = `Low: ${Math.round(data.todayLowTempF)}\u00B0`;
+todayHigh.textContent = `High: ${Math.round(data.todayHighTempF)}\u00B0`;
+tomorrowLow.textContent = `Low: ${Math.round(data.tomorrowLowTempF)}\u00B0`;
+tomorrowHigh.textContent = `High: ${Math.round(data.tomorrowHighTempF)}\u00B0`;
+dayTwoLow.textContent = `Low: ${Math.round(data.dayTwoLowTempF)}\u00B0`;
+dayTwoHigh.textContent = `High: ${Math.round(data.dayTwoHighTempF)}\u00B0`;
+dayThreeLow.textContent = `Low: ${Math.round(data.dayThreeLowTempF)}\u00B0`;
+dayThreeHigh.textContent = `High: ${Math.round(data.dayThreeHighTempF)}\u00B0`;
 humidity.textContent = `${data.currentHumidity}%`;
 feelsLike.textContent = `${Math.round(data.currentFeelsLikeF)}\u00B0`;
 displaySunriseSunset(data);
 displayBackground(data.currentCondition);
+
+// Toggle between Fahrenheit and Celcius
+const toggle = document.getElementById('toggle');
+toggle.addEventListener('click', () => {
+    if (currentTemp.textContent === `${Math.round(data.currentTempF)}\u00B0`) {
+        currentTemp.textContent = `${Math.round(data.currentTempC)}\u00B0`;
+        currentHighTemp.textContent = `H: ${Math.round(data.todayHighTempC)}\u00B0`;
+        currentLowTemp.textContent = `L: ${Math.round(data.todayLowTempC)}\u00B0`;
+        todayLow.textContent = `Low: ${Math.round(data.todayLowTempC)}\u00B0`;
+        todayHigh.textContent = `High: ${Math.round(data.todayHighTempC)}\u00B0`;
+        tomorrowLow.textContent = `Low: ${Math.round(data.tomorrowLowTempC)}\u00B0`;
+        tomorrowHigh.textContent = `High: ${Math.round(data.tomorrowHighTempC)}\u00B0`;
+        dayTwoLow.textContent = `Low: ${Math.round(data.dayTwoLowTempC)}\u00B0`;
+        dayTwoHigh.textContent = `High: ${Math.round(data.dayTwoHighTempC)}\u00B0`;
+        dayThreeLow.textContent = `Low: ${Math.round(data.dayThreeLowTempC)}\u00B0`;
+        dayThreeHigh.textContent = `High: ${Math.round(data.dayThreeHighTempC)}\u00B0`;
+        feelsLike.textContent = `${Math.round(data.currentFeelsLikeC)}\u00B0`;
+    } else if (currentTemp.textContent === `${Math.round(data.currentTempC)}\u00B0`) {
+        currentTemp.textContent = `${Math.round(data.currentTempF)}\u00B0`;
+        currentHighTemp.textContent = `H: ${Math.round(data.todayHighTempF)}\u00B0`;
+        currentLowTemp.textContent = `L: ${Math.round(data.todayLowTempF)}\u00B0`;
+        todayLow.textContent = `Low: ${Math.round(data.todayLowTempF)}\u00B0`;
+        todayHigh.textContent = `High: ${Math.round(data.todayHighTempF)}\u00B0`;
+        tomorrowLow.textContent = `Low: ${Math.round(data.tomorrowLowTempF)}\u00B0`;
+        tomorrowHigh.textContent = `High: ${Math.round(data.tomorrowHighTempF)}\u00B0`;
+        dayTwoLow.textContent = `Low: ${Math.round(data.dayTwoLowTempF)}\u00B0`;
+        dayTwoHigh.textContent = `High: ${Math.round(data.dayTwoHighTempF)}\u00B0`;
+        dayThreeLow.textContent = `Low: ${Math.round(data.dayThreeLowTempF)}\u00B0`;
+        dayThreeHigh.textContent = `High: ${Math.round(data.dayThreeHighTempF)}\u00B0`;
+        feelsLike.textContent = `${Math.round(data.currentFeelsLikeF)}\u00B0`;
+    }
+})
+
 }
 
 function getIcon(condition) {
