@@ -88,35 +88,35 @@ svg, #current-high {
 }
 
 .sunny {
-    background-image: url('sunny.png');
+    background-image: url('background-images/sunny.png');
 }
 
 .cloudy {
-    background-image: url('cloudy\ \(1\).png');
+    background-image: url('background-images/cloudy\ \(1\).png');
 }
 
 .partly-cloudy {
-    background-image: url('partly-cloudy.png');
+    background-image: url('background-images/partly-cloudy.png');
 }
 
 .rain {
-    background-image: url('rain.png');
+    background-image: url('background-images/rain.png');
 }
 
 .storm {
-    background-image: url('storm.png');
+    background-image: url('background-images/storm.png');
 }
 
 .snow {
-    background-image: url('snow.png');
+    background-image: url('background-images/snow.png');
 }
 
 .wind {
-    background-image: url('wind.png');
+    background-image: url('background-images/wind.png');
 }
 
 .night {
-    background-image: url('night.png');
+    background-image: url('background-images/night.png');
     color: white;
 }
 
